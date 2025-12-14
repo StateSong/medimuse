@@ -16,7 +16,7 @@ const AudioSamples = () => {
   const samples: AudioSample[] = [
     { id: "sleep", title: "Into Sleep", category: "Wellness", url: "https://medimuse.net/static/media/audio/Into_Sleep.mp3" },
     { id: "hot-water", title: "Into Hot Water", category: "Relaxation", url: "https://medimuse.net/static/media/audio/Into_Hot_Water.mp3" },
-    { id: "run", title: "Out To Run", category: "Fitness", url: "https://medimuse.net/static/media/audio/Out_To_Run.mp3" },
+    { id: "daydream", title: "Day Dreaming", category: "Relaxation", url: "https://medimuse.net/static/media/audio/Day_Dreaming.mp3" },
     { id: "cool-down", title: "Cool Down", category: "Recovery", url: "https://medimuse.net/static/media/audio/Cool_Down.mp3" },
     { id: "morning", title: "Good Morning", category: "Energy", url: "https://medimuse.net/static/media/audio/Good_Morning.mp3" },
     { id: "afternoon", title: "Good Afternoon", category: "Focus", url: "https://medimuse.net/static/media/audio/Good_Afternoon.mp3" },
