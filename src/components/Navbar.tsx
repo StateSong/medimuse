@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logoImg from "@/assets/mm-ss-logo.jpg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,16 +33,12 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-copper-light flex items-center justify-center">
-                <span className="text-primary-foreground font-serif font-bold text-lg">M</span>
-              </div>
-              <div className="absolute inset-0 rounded-full bg-primary/30 blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-            <span className="font-serif text-xl font-semibold text-foreground">
-              MediMuse
-            </span>
+          <a href="#" className="flex items-center group">
+            <img 
+              src={logoImg} 
+              alt="MediMuse StateSong" 
+              className="h-12 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Navigation */}
