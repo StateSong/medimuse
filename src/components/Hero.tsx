@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { Play, ChevronDown } from "lucide-react";
-import WaveformVisualizer from "./WaveformVisualizer";
 
 const Hero = () => {
   const [videoEnded, setVideoEnded] = useState(false);
@@ -35,24 +34,15 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[150px] pulse-gentle" />
       </div>
 
-      {/* Replay Button */}
-      {videoEnded && (
-        <button
-          onClick={handleReplay}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-20 h-20 rounded-full bg-primary/80 hover:bg-primary transition-all duration-300 hover:scale-110 shadow-xl shadow-primary/30"
-        >
-          <Play size={32} className="text-primary-foreground ml-1" />
-        </button>
-      )}
-
       {/* Noise texture overlay */}
       <div className="absolute inset-0 bg-noise pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-24 pb-12">
+      <div className="relative z-10 container mx-auto px-6 pt-20 pb-12 flex flex-col min-h-screen">
+        {/* Top section - Badge and Text */}
         <div className="max-w-4xl text-left">
-          {/* Badge */}
-          <div className="fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 backdrop-blur-sm mb-8">
+          {/* Badge as logo replacement */}
+          <div className="fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 backdrop-blur-sm mb-6">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             <span className="text-sm text-muted-foreground">Patented Technology • US 10,369,323 B2</span>
           </div>
@@ -65,18 +55,30 @@ const Hero = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="fade-in-up delay-200 text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
+          <p className="fade-in-up delay-200 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
             StateSong® translates your biometric data into <span className="text-foreground">endogenous music</span> — 
             personalized compositions from within, designed to entrain your mind and body into optimal states.
           </p>
+        </div>
 
-          {/* Waveform */}
-          <div className="fade-in-up delay-300 mb-10 max-w-2xl">
-            <WaveformVisualizer isPlaying={true} barCount={60} className="opacity-60" />
-          </div>
+        {/* Spacer to push buttons to bottom */}
+        <div className="flex-grow" />
 
+        {/* Bottom section - Buttons and Replay */}
+        <div className="fade-in-up delay-400 flex flex-col items-start gap-6 mb-16">
+          {/* Replay Button */}
+          {videoEnded && (
+            <button
+              onClick={handleReplay}
+              className="flex items-center gap-3 px-6 py-3 rounded-full bg-primary/80 hover:bg-primary transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/30"
+            >
+              <Play size={20} className="text-primary-foreground" />
+              <span className="text-primary-foreground font-medium">Play Again</span>
+            </button>
+          )}
+          
           {/* CTA Buttons */}
-          <div className="fade-in-up delay-400 flex flex-col sm:flex-row items-start gap-4">
+          <div className="flex flex-col sm:flex-row items-start gap-4">
             <a
               href="#samples"
               className="group flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/25"
@@ -92,14 +94,14 @@ const Hero = () => {
             </a>
           </div>
         </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 fade-in-up delay-500">
-        <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-          <span className="text-xs tracking-widest uppercase">Discover</span>
-          <ChevronDown size={20} className="animate-bounce" />
-        </a>
+        {/* Scroll indicator */}
+        <div className="fade-in-up delay-500 flex justify-center">
+          <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+            <span className="text-xs tracking-widest uppercase">Discover</span>
+            <ChevronDown size={20} className="animate-bounce" />
+          </a>
+        </div>
       </div>
     </section>
   );
