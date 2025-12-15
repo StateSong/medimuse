@@ -69,7 +69,9 @@ const Hero = () => {
             <br />
             personalized compositions from within,
             <br />
-            designed to entrain your mind and body into optimal states.
+            designed to entrain your mind and body
+            <br />
+            into optimal states and improved wellness.
           </p>
         </div>
 
