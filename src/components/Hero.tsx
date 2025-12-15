@@ -35,38 +35,29 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[150px] pulse-gentle" />
       </div>
 
-      {/* Replay Button */}
-      {videoEnded && (
-        <button
-          onClick={handleReplay}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-20 h-20 rounded-full bg-primary/80 hover:bg-primary transition-all duration-300 hover:scale-110 shadow-xl shadow-primary/30"
-        >
-          <Play size={32} className="text-primary-foreground ml-1" />
-        </button>
-      )}
-
       {/* Noise texture overlay */}
       <div className="absolute inset-0 bg-noise pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-24 pb-12">
+      <div className="relative z-10 container mx-auto px-6 pt-8 pb-12">
         <div className="max-w-4xl text-left">
-          {/* Badge */}
-          <div className="fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 backdrop-blur-sm mb-8">
+          {/* Badge - Top Left */}
+          <div className="fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 backdrop-blur-sm mb-6">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             <span className="text-sm text-muted-foreground">Patented Technology • US 10,369,323 B2</span>
           </div>
 
           {/* Headline */}
-          <h1 className="fade-in-up delay-100 font-serif text-5xl md:text-7xl lg:text-8xl font-medium leading-tight mb-6">
+          <h1 className="fade-in-up delay-100 font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-tight mb-6">
             <span className="text-foreground">Listen...</span>
             <br />
-            <span className="text-glow text-primary">You're Made of Music</span>
+            <span className="text-glow text-primary whitespace-nowrap">You're Made of Music</span>
           </h1>
 
           {/* Subheadline */}
           <p className="fade-in-up delay-200 text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-            StateSong® translates your biometric data into <span className="text-foreground">endogenous music</span> — 
+            StateSong® translates your biometric data into <span className="text-foreground">endogenous music</span>—
+            <br />
             personalized compositions from within, designed to entrain your mind and body into optimal states.
           </p>
 
@@ -76,7 +67,7 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="fade-in-up delay-400 flex flex-col sm:flex-row items-start gap-4">
+          <div className="fade-in-up delay-400 flex flex-wrap items-center gap-4">
             <a
               href="#samples"
               className="group flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/25"
@@ -90,6 +81,17 @@ const Hero = () => {
             >
               Learn More
             </a>
+            {videoEnded && (
+              <button
+                onClick={handleReplay}
+                className="flex items-center gap-3 group"
+              >
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/80 hover:bg-primary transition-all duration-300 hover:scale-110 shadow-lg shadow-primary/30">
+                  <Play size={18} className="text-primary-foreground ml-0.5" />
+                </div>
+                <span className="text-sm text-primary font-medium">Play Again</span>
+              </button>
+            )}
           </div>
         </div>
       </div>
