@@ -1,16 +1,36 @@
-import { Mail, ExternalLink, Github } from "lucide-react";
+import { Mail, ExternalLink, Github, User } from "lucide-react";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 const Contact = () => {
+  const [selectedBio, setSelectedBio] = useState<string | null>(null);
+
   const contacts = [
     {
       name: "Robert Joseph",
       role: "Inventor, Patent Recipient, Evangelist",
       email: "rjoseph@medimuse.net",
+      bio: `A graduate of Neuro-Psychology from Stanford University, Robert Joseph worked in the Pediatrics Endocrinology Lab of Stanford Medical School, exploring the hormone systems that control stress, and reproductive and metabolic balance. He became involved in research on Anorexia Nervosa, and it was within this context that he observed hormonal activity patterns within patterns and patterns that repeated in phases.
+
+Noting that these were the very definition of musical canons and fugues, Robert envisioned that if we could convert hormonal data into sound, might not endogenous music (created from the inside) be as complex and beautiful as compositions created by Bach? Thus, the notion of StateSong was born, encapsulated in the phrase, "Listen, you're made of music!".
+
+As wearables that captured biometric data began to appear, Robert formulated a startup company, MediMuse, and subsequently acquired the patent for the technology upon which the StateSong platform and applications are built.`,
     },
     {
       name: "Peter J. Slack",
       role: "Technology",
       email: "pslack@medimuse.net",
+      bio: `Peter J. Slack, P.Eng., is a licensed professional Engineer based outside of Ottawa, Canada. Aside from practicing engineering, Peter has been studying and playing music since six years of age, and has been actively coding computer software for more than 40 years.
+
+In addition to his role as Chief Engineer at MediMuse, Peter also serves as a senior software engineer at WaveDNA.com, which conducts research, develops, and publishes music software tools.
+
+As Peter began looking for new opportunities to advance his music and coding research, he joined the MediMuse™ team to support, materialize and implement a shared vision with Robert Joseph for StateSong® Technology.`,
     },
   ];
 
@@ -28,6 +48,8 @@ const Contact = () => {
       url: "https://medimuse.net/static/media/The_Big_Picture.pdf",
     },
   ];
+
+  const selectedContact = contacts.find((c) => c.name === selectedBio);
 
   return (
     <section id="contact" className="py-24 lg:py-32 relative">
@@ -52,23 +74,30 @@ const Contact = () => {
           <div className="space-y-6">
             <h3 className="font-serif text-xl font-medium mb-4">Team Contacts</h3>
             {contacts.map((contact) => (
-              <a
+              <div
                 key={contact.email}
-                href={`mailto:${contact.email}`}
-                className="group block bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300"
+                className="group bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300"
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <h4 className="font-medium text-foreground">{contact.name}</h4>
+                    <button
+                      onClick={() => setSelectedBio(contact.name)}
+                      className="font-medium text-foreground hover:text-primary transition-colors cursor-pointer flex items-center gap-2"
+                    >
+                      {contact.name}
+                      <User className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
+                    </button>
                     <p className="text-sm text-muted-foreground mb-2">{contact.role}</p>
-                    <div className="flex items-center gap-2 text-primary">
+                    <a
+                      href={`mailto:${contact.email}`}
+                      className="flex items-center gap-2 text-primary hover:underline"
+                    >
                       <Mail className="w-4 h-4" />
                       <span className="text-sm">{contact.email}</span>
-                    </div>
+                    </a>
                   </div>
-                  <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
-              </a>
+              </div>
             ))}
 
             {/* Community */}
@@ -127,6 +156,28 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* Bio Dialog */}
+      <Dialog open={!!selectedBio} onOpenChange={() => setSelectedBio(null)}>
+        <DialogContent className="max-w-lg bg-card">
+          <DialogHeader>
+            <DialogTitle className="font-serif text-2xl">{selectedContact?.name}</DialogTitle>
+            <DialogDescription className="text-primary">
+              {selectedContact?.role}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="text-muted-foreground leading-relaxed whitespace-pre-line text-sm">
+            {selectedContact?.bio}
+          </div>
+          <a
+            href={`mailto:${selectedContact?.email}`}
+            className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline mt-2"
+          >
+            <Mail className="w-4 h-4" />
+            {selectedContact?.email}
+          </a>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
