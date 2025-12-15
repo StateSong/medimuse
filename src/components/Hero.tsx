@@ -15,25 +15,23 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background Video - contained width */}
-      <div className="absolute inset-0 flex justify-end">
-        <div className="relative w-full max-w-4xl h-full">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            playsInline
-            onEnded={() => setVideoEnded(true)}
-            className="absolute inset-0 w-full h-full object-cover opacity-80 brightness-125"
-          >
-            <source src="https://medimuse.net/static/media/StateSong_05s.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background" />
+      {/* Background Video - full width, brighter */}
+      <div className="absolute inset-0">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+          onEnded={() => setVideoEnded(true)}
+          className="absolute inset-0 w-full h-full object-cover brightness-110"
+        >
+          <source src="https://medimuse.net/static/media/StateSong_05s.mp4" type="video/mp4" />
+        </video>
+        {/* Subtle gradient only at bottom for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
         
         {/* Animated glow */}
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[150px] pulse-gentle" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-[150px] pulse-gentle" />
       </div>
 
       {/* Noise texture overlay */}
