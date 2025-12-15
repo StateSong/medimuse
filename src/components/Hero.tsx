@@ -24,7 +24,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Background Video - right aligned, 90% size */}
-      <div className="absolute top-[5%] bottom-[5%] right-0 w-[90%]">
+      <div className="absolute top-[2.5%] bottom-[2.5%] right-0 w-[95%]">
         <video
           ref={videoRef}
           autoPlay
