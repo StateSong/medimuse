@@ -72,8 +72,9 @@ As Peter began looking for new opportunities to advance his music and coding res
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
           {/* Contact cards */}
-          <div className="space-y-6">
+          <div>
             <h3 className="font-serif text-xl font-medium mb-4">Team Contacts</h3>
+            <div className="space-y-6">
             {contacts.map((contact) => (
               <div
                 key={contact.email}
@@ -114,6 +115,7 @@ As Peter began looking for new opportunities to advance his music and coding res
                 <Mail className="w-4 h-4" />
                 community@medimuse.net
               </a>
+            </div>
             </div>
           </div>
 
