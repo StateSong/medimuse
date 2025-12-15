@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Background Video - left aligned with text */}
-      <div className="absolute inset-0 left-6 md:left-[calc((100vw-1280px)/2+24px)] lg:left-[calc((100vw-1280px)/2+24px)]">
+      <div className="absolute inset-0 -left-[120px] md:-left-[96px]">
         <video
           ref={videoRef}
           autoPlay
