@@ -23,8 +23,8 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background Video - right aligned, 90% size */}
-      <div className="absolute top-[3%] bottom-[3%] right-0 w-[94%]">
+      {/* Background Video - responsive sizing */}
+      <div className="absolute top-[3%] bottom-[3%] right-0 w-full md:w-[94%]">
         <video
           ref={videoRef}
           autoPlay
