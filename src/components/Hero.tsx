@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { Play, ChevronDown } from "lucide-react";
-import WaveformVisualizer from "./WaveformVisualizer";
 
 const Hero = () => {
   const [videoEnded, setVideoEnded] = useState(false);
@@ -15,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Background Video - contained width */}
       <div className="absolute inset-0 flex justify-end">
         <div className="relative w-full max-w-4xl h-full">
@@ -37,50 +36,53 @@ const Hero = () => {
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[150px] pulse-gentle" />
       </div>
 
-      {/* Replay Button */}
-      {videoEnded && (
-        <button
-          onClick={handleReplay}
-          className="absolute top-1/2 right-[25%] -translate-y-1/2 z-20 flex items-center justify-center w-20 h-20 rounded-full bg-primary/80 hover:bg-primary transition-all duration-300 hover:scale-110 shadow-xl shadow-primary/30"
-        >
-          <Play size={32} className="text-primary-foreground ml-1" />
-        </button>
-      )}
-
       {/* Noise texture overlay */}
       <div className="absolute inset-0 bg-noise pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-24 pb-12">
-        <div className="max-w-xl text-left">
-          {/* Subheadline - 2 lines */}
-          <p className="fade-in-up delay-100 text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-            StateSong® translates your biometric data into <span className="text-foreground">endogenous music</span> — personalized compositions from within, designed to entrain your mind and body into optimal states.
+      <div className="relative z-10 container mx-auto px-6 pt-28 flex-1 flex flex-col">
+        {/* Top section - StateSong text */}
+        <div className="max-w-2xl text-left">
+          <p className="fade-in-up text-xl md:text-2xl lg:text-3xl text-muted-foreground leading-relaxed">
+            StateSong® translates your biometric data into <span className="text-foreground">endogenous music</span> —
+            <br />
+            personalized compositions from within, designed to entrain your mind and body into optimal states.
           </p>
+        </div>
 
-          {/* Waveform */}
-          <div className="fade-in-up delay-200 mb-10 max-w-xl">
-            <WaveformVisualizer isPlaying={true} barCount={60} className="opacity-60" />
-          </div>
+        {/* Spacer to push buttons to bottom */}
+        <div className="flex-1" />
 
-          {/* CTA Buttons - single line, bottom aligned */}
-          <div className="fade-in-up delay-300 flex items-end gap-4">
-            <a
-              href="#samples"
+        {/* Bottom section - Buttons */}
+        <div className="mb-16">
+          {/* CTA Buttons */}
+          <div className="fade-in-up delay-200 flex items-center gap-4 mb-8">
+            <button
+              onClick={handleReplay}
               className="group flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 whitespace-nowrap"
             >
               <Play size={20} className="group-hover:scale-110 transition-transform" />
-              Experience StateSong
-            </a>
+              Play Again
+            </button>
             <a
               href="#about"
               className="px-8 py-4 border border-border text-foreground rounded-full font-medium hover:bg-secondary/50 hover:border-primary/50 transition-all duration-300 whitespace-nowrap"
             >
               Learn More
             </a>
+            <a
+              href="#samples"
+              className="px-8 py-4 border border-border text-foreground rounded-full font-medium hover:bg-secondary/50 hover:border-primary/50 transition-all duration-300 whitespace-nowrap"
+            >
+              Experience StateSong
+            </a>
+          </div>
+
+          {/* Discover button at very bottom */}
+          <div className="fade-in-up delay-300 flex justify-center">
             <a 
               href="#about" 
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
+              className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <span className="text-sm tracking-widest uppercase">Discover</span>
               <ChevronDown size={20} className="animate-bounce" />
