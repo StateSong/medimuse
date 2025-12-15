@@ -1,5 +1,5 @@
 import { Zap, Heart, Brain, Music } from "lucide-react";
-import brainImage from "@/assets/brain-network.jpg";
+import statesongImage from "@/assets/statesong-biometric-music.jpg";
 
 const About = () => {
   const features = [
@@ -54,8 +54,8 @@ const About = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden glow-copper">
               <img
-                src={brainImage}
-                alt="Neural network visualization representing mind-body connection"
+                src={statesongImage}
+                alt="Biometric data transforming into personalized music - heartbeat and brainwaves flowing into sound waves"
                 className="w-full aspect-square object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
