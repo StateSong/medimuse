@@ -4,7 +4,7 @@ const Contact = () => {
   const contacts = [
     {
       name: "Robert Joseph",
-      role: "Business",
+      role: "Inventor, Patent Recipient, Evangelist",
       email: "rjoseph@medimuse.net",
     },
     {
