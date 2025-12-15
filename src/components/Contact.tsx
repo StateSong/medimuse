@@ -16,7 +16,7 @@ const Contact = () => {
       name: "Robert Joseph",
       role: "Inventor, Patent Recipient, Evangelist",
       email: "rjoseph@medimuse.net",
-      bio: `A graduate of Neuro-Psychology from Stanford University, Robert Joseph worked in the Pediatrics Endocrinology Lab of Stanford Medical School, exploring the hormone systems that control stress, and reproductive and metabolic balance. He became involved in research on Anorexia Nervosa, and it was within this context that he observed hormonal activity patterns within patterns and patterns that repeated in phases.
+      bio: `A graduate of Neuro-Psychology from Stanford University, Robert Joseph worked in the Pediatrics Endocrinology Lab of Stanford Medical School, exploring the hormone systems that control stress, and reproductive and metabolic balance. It was within this context that he observed hormonal activity patterns within patterns and patterns that repeated in phases.
 
 Noting that these were the very definition of musical canons and fugues, Robert envisioned that if we could convert hormonal data into sound, might not endogenous music (created from the inside) be as complex and beautiful as compositions created by Bach? Thus, the notion of StateSong was born, encapsulated in the phrase, "Listen, you're made of music!".
 
