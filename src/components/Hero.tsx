@@ -1,8 +1,9 @@
 import { useState, useRef } from "react";
-import { Play, ChevronDown } from "lucide-react";
+import { Play, ChevronDown, Volume2, VolumeX } from "lucide-react";
 
 const Hero = () => {
   const [videoEnded, setVideoEnded] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleReplay = () => {
@@ -13,10 +14,17 @@ const Hero = () => {
     }
   };
 
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background Video - left aligned with text */}
-      <div className="absolute inset-0 -left-[120px] md:-left-[96px]">
+      {/* Background Video - reduced by 10% */}
+      <div className="absolute inset-[5%] -left-[120px] md:-left-[96px]">
         <video
           ref={videoRef}
           autoPlay
@@ -33,6 +41,19 @@ const Hero = () => {
         {/* Animated glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-[150px] pulse-gentle" />
       </div>
+
+      {/* Sound Toggle Button */}
+      <button
+        onClick={toggleMute}
+        className="absolute top-24 right-6 z-20 flex items-center justify-center w-12 h-12 rounded-full bg-secondary/80 hover:bg-secondary border border-border/50 transition-all duration-300 hover:scale-110"
+        aria-label={isMuted ? "Unmute video" : "Mute video"}
+      >
+        {isMuted ? (
+          <VolumeX size={20} className="text-muted-foreground" />
+        ) : (
+          <Volume2 size={20} className="text-primary" />
+        )}
+      </button>
 
       {/* Noise texture overlay */}
       <div className="absolute inset-0 bg-noise pointer-events-none" />
