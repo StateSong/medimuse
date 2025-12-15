@@ -63,17 +63,17 @@ const Hero = () => {
         {/* Top section - StateSong text */}
         <div className="max-w-2xl text-left">
           <p className="fade-in-up text-xl md:text-2xl lg:text-3xl text-muted-foreground leading-relaxed">
-            StateSong® translates your biometric data into <span className="text-foreground">endogenous music</span> —
+            StateSong® translates your biometric data into <span className="text-foreground text-2xl md:text-3xl lg:text-4xl font-medium">Endogenous Music</span>
             <br />
             personalized compositions from within, designed to entrain your mind and body into optimal states.
           </p>
         </div>
 
         {/* Spacer to push buttons to bottom */}
-        <div className="flex-1" />
+        <div className="flex-1 min-h-[20vh]" />
 
         {/* Bottom section - Buttons */}
-        <div className="mb-16">
+        <div className="mb-8">
           {/* CTA Buttons */}
           <div className="fade-in-up delay-200 flex items-center gap-4 mb-8">
             <button
