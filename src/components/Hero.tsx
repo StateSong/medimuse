@@ -38,7 +38,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-noise pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-28 flex-1 flex flex-col">
+      <div className="relative z-10 container mx-auto pl-2 md:pl-3 pr-6 pt-28 flex-1 flex flex-col">
         {/* Top section - StateSong text */}
         <div className="max-w-2xl text-left">
           <p className="fade-in-up text-xl md:text-2xl lg:text-3xl text-muted-foreground leading-relaxed">

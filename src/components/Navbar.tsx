@@ -29,7 +29,7 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto pl-2 md:pl-3 pr-6 py-4">
         <div className="flex items-center justify-between">
           {/* Patent Badge */}
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 backdrop-blur-sm">
