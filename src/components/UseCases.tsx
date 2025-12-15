@@ -68,9 +68,8 @@ const UseCases = () => {
           </div>
           <div className="absolute bottom-8 left-8 right-8">
             <blockquote className="text-xl md:text-2xl font-serif text-foreground italic">
-              "StateSong helped me find calm during my most anxious moments."
+              "StateSong helps me find calm during my most anxious moments."
             </blockquote>
-            <p className="text-muted-foreground mt-2">— PTSD recovery testimonial</p>
           </div>
         </div>
 
