@@ -23,15 +23,15 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background Video - reduced by 10% */}
-      <div className="absolute inset-[5%] left-auto right-0">
+      {/* Background Video - right aligned, 90% size */}
+      <div className="absolute top-[5%] bottom-[5%] right-0 w-[90%]">
         <video
           ref={videoRef}
           autoPlay
           muted
           playsInline
           onEnded={() => setVideoEnded(true)}
-          className="absolute inset-0 w-full h-full object-cover brightness-110"
+          className="w-full h-full object-cover brightness-110"
         >
           <source src="https://medimuse.net/static/media/StateSong_05s.mp4" type="video/mp4" />
         </video>
