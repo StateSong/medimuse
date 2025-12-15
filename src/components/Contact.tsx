@@ -64,7 +64,8 @@ As Peter began looking for new opportunities to advance his music and coding res
           </h2>
           <div className="section-divider mb-6" />
           <p className="text-muted-foreground text-lg">
-            Interested in licensing, partnerships, or joining our open-source community? 
+            Interested in licensing, partnerships, or joining our open-source community?
+            <br />
             We'd love to hear from you.
           </p>
         </div>
