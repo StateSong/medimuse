@@ -67,7 +67,9 @@ const Hero = () => {
             <br />
             <span className="text-foreground text-2xl md:text-3xl lg:text-4xl font-medium">Endogenous Music</span>
             <br />
-            personalized compositions from within, designed to entrain your mind and body into optimal states.
+            personalized compositions from within,
+            <br />
+            designed to entrain your mind and body into optimal states.
           </p>
         </div>
 
