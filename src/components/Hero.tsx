@@ -24,7 +24,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Background Video - responsive sizing */}
-      <div className="absolute top-[3%] bottom-[3%] right-0 w-full md:w-[94%]">
+      <div className="absolute top-[3%] bottom-[3%] right-0 w-full">
         <video
           ref={videoRef}
           autoPlay
@@ -63,7 +63,9 @@ const Hero = () => {
         {/* Top section - StateSong text */}
         <div className="max-w-2xl text-left">
           <p className="fade-in-up text-xl md:text-2xl lg:text-3xl text-muted-foreground leading-relaxed">
-            StateSong® translates your biometric data into <span className="text-foreground text-2xl md:text-3xl lg:text-4xl font-medium">Endogenous Music</span>
+            StateSong® translates your biometric data into
+            <br />
+            <span className="text-foreground text-2xl md:text-3xl lg:text-4xl font-medium">Endogenous Music</span>
             <br />
             personalized compositions from within, designed to entrain your mind and body into optimal states.
           </p>
@@ -78,20 +80,20 @@ const Hero = () => {
           <div className="fade-in-up delay-200 flex items-center gap-4 mb-8">
             <button
               onClick={handleReplay}
-              className="group flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 whitespace-nowrap"
+              className="group flex items-center gap-2 px-6 py-3 text-sm bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 whitespace-nowrap"
             >
-              <Play size={20} className="group-hover:scale-110 transition-transform" />
+              <Play size={16} className="group-hover:scale-110 transition-transform" />
               Play Again
             </button>
             <a
               href="#about"
-              className="px-8 py-4 border border-border text-foreground rounded-full font-medium hover:bg-secondary/50 hover:border-primary/50 transition-all duration-300 whitespace-nowrap"
+              className="px-6 py-3 text-sm border border-border text-foreground rounded-full font-medium hover:bg-secondary/50 hover:border-primary/50 transition-all duration-300 whitespace-nowrap"
             >
               Learn More
             </a>
             <a
               href="#samples"
-              className="px-8 py-4 border border-border text-foreground rounded-full font-medium hover:bg-secondary/50 hover:border-primary/50 transition-all duration-300 whitespace-nowrap"
+              className="px-6 py-3 text-sm border border-border text-foreground rounded-full font-medium hover:bg-secondary/50 hover:border-primary/50 transition-all duration-300 whitespace-nowrap"
             >
               Experience StateSong
             </a>
