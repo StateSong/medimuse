@@ -1,5 +1,5 @@
 import { Heart, Dumbbell, Music2 } from "lucide-react";
-import wellnessImage from "@/assets/wellness-listener.jpg";
+import applicationsImage from "@/assets/statesong-applications.jpg";
 
 const UseCases = () => {
   const categories = [
@@ -60,8 +60,8 @@ const UseCases = () => {
         <div className="relative max-w-4xl mx-auto mb-20">
           <div className="rounded-2xl overflow-hidden">
             <img
-              src={wellnessImage}
-              alt="Person experiencing wellness through StateSong technology"
+              src={applicationsImage}
+              alt="StateSong applications - wellness meditation, athletic performance, and creative expression connected by flowing music"
               className="w-full h-[300px] md:h-[400px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
