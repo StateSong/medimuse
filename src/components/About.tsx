@@ -37,7 +37,7 @@ const About = () => {
             About StateSong
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-medium mb-6">
-            Music From Within
+            Music From Within!
           </h2>
           <div className="section-divider mb-6" />
           <p className="text-muted-foreground text-lg leading-relaxed">
